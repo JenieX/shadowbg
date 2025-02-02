@@ -14,7 +14,8 @@ RUN cd /frontend && npm install && npm run build && mv out /fe
 # ------------------------------------------------------------------------------
 # Pull base image
 FROM alpine:latest
-
+LABEL maintainer="xav1erenc"
+LABEL org.opencontainers.image.source="https://github.com/OSS-App-Forks/shadowbg"
 # ------------------------------------------------------------------------------
 # Copy files to final stage
 COPY --from=shadowbgbuild /shadowbg/shadow.bg /app/shadow.bg
